@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import PokemonDetailContext from "./context/pokemonDetailContext";
+import Details from "./pages/details/Details";
+import Pokemon from "./pages/pokemon/Pokemon";
 
 function App() {
+  const pokemonDetail = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PokemonDetailContext.Provider value={pokemonDetail}>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Pokemon />} />
+          <Route path="/details" element={<Details />} />
+        </Routes>
+      </div>
+    </PokemonDetailContext.Provider>
   );
 }
 

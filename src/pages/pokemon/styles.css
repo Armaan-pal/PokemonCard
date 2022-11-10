@@ -1,0 +1,19 @@
+.pokemon {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 200px;
+    margin: auto;
+  }
+  .pagination-button {
+      width: 50px;
+      height: 40px;
+      font-size: larger;
+  }
+   
+  
